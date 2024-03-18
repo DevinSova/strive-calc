@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package combo;
+
+service Combo { rpc Sol(ComboRequest) returns (ComboResponse); }
+
+enum SolMove {
+  cS = 0;
+  Fafnir = 1;
+}
+
+message ComboRequest { repeated SolMove combo = 1; }
+
+message ComboResponse { int32 damage = 1; }
